@@ -16,7 +16,12 @@ public class Plate {
     }
     
     public void info(){
-        System.out.println("Plate: " + food);
+        System.out.println("В тарелке осталось: " + food);
+    }
+
+    public void addFood(int food){
+       this.food += food;
+       System.out.println("Насыпим корма котейкам: + " + food);
     }
 
 }
