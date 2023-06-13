@@ -1,4 +1,3 @@
-package ru.geekbrains.lesson4.homework;
 
 public class Program {
 
@@ -22,6 +21,36 @@ public class Program {
      */
     public static void main(String[] args) {
 
+        Box<Apple> apples = new Box<>();
+        Box<Orange> oranges = new Box<>();
+
+        for (int i = 0; i < 10; i++) {
+            apples.addFruit(new Apple());
+        }
+        for (int i = 0; i < 5; i++) {
+            oranges.addFruit(new Orange());
+        }
+        apples.showBox();
+        oranges.showBox();
+        System.out.printf("Вес коробки %s: %.2f f.\n", apples.toString(), apples.getWeight());
+        System.out.printf("Вес коробки %s: %.2f f.\n", oranges.toString(), oranges.getWeight());
+
+        apples.compare(oranges);
+        System.out.println();
+
+        Box<Orange> box = new Box<>();
+        for (int i = 0; i < 10; i++) {
+            box.addFruit(new Orange());
+        }
+
+        box.showBox();
+        box.pourTo(oranges);
+        box.showBox();
+        oranges.showBox();
+        System.out.printf("Вес коробки %s: %.2f f.\n", box.toString(), box.getWeight());
+
     }
 
 }
+
+
