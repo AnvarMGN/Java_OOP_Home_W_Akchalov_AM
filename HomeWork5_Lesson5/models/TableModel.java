@@ -1,6 +1,4 @@
-package models;
 
-import presenters.Model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -51,8 +49,16 @@ public class TableModel implements Model {
      * TODO: Разработать самостоятельно в рамках домашней работы
      * Поменять бронь столика
      */
-    public int changeReservationTable(){
-        return 0;
+    public int changeReservationTable(int oldReservation, Date orderDate, int tableNo, String name){
+        for (Table table: tables){
+            for (Reservation reservation: table.getReservations()){
+                if (reservation.getId() == oldReservation){
+                    table.getReservations().remove(reservation);
+                    return reservationTable(orderDate, tableNo, name);
+                }
+            }
+        }
+        throw new RuntimeException("Некорректный номер брони столика.");
         //...
         //TODO: Для создания новой брони, можно воспользоваться уже существующим методом reservationTable
     }

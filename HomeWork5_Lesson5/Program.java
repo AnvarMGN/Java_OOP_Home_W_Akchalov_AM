@@ -1,10 +1,4 @@
 
-import models.TableModel;
-import presenters.BookingPresenter;
-import presenters.Model;
-import presenters.View;
-import views.BookingView;
-
 import java.util.Date;
 
 public class Program {
@@ -25,7 +19,11 @@ public class Program {
 
         bookingView.reservationTable(new Date(), 102, "Станислав");
 
-        //bookingView.changeReservationTable();
+        System.out.println("Домашняя работа.");
+
+        bookingView.changeReservationTable(9001, new Date(), 101, "Станислав");
+        //bookingView.changeReservationTable(9001, new Date(), 101, "Станислав");
+
     }
 
 }

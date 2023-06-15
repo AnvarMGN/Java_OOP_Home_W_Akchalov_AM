@@ -1,6 +1,4 @@
 
-import models.Table;
-
 import java.util.Collection;
 
 public interface View {
@@ -20,5 +18,9 @@ public interface View {
     void printReservationTableResult(int reservationNo);
 
     void printReservationTableError(String errorMessage);
+
+    void printChangeReservationTableResult(int reservationNo);
+
+    void printChangeReservationTableError(String errorMessage);
 
 }
